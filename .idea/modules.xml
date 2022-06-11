@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../yarn-berry-monorepo-template/.idea/yarn-berry-monorepo-template.iml" filepath="$PROJECT_DIR$/../yarn-berry-monorepo-template/.idea/yarn-berry-monorepo-template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/yarn-monorepo-study.iml" filepath="$PROJECT_DIR$/.idea/yarn-monorepo-study.iml" />
     </modules>
   </component>
 </project>
