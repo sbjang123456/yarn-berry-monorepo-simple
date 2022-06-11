@@ -48,7 +48,7 @@ yarn-error.log*
 # IDE
 .idea/*
 !.idea/modules.xml
-!.idea/yarn-berry-monorepo-template.iml
+!.idea/yarn-monorepo-study.iml
 .project
 .classpath
 *.launch
