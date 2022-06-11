@@ -1,10 +1,10 @@
 {
   "name": "yarn-berry-monorepo-template",
   "private": true,
-  "homepage": "https://github.com/sbjang123456/yarn-berry-monorepo-example",
+  "homepage": "https://github.com/sbjang123456/yarn-monorepo-study",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sbjang123456/yarn-berry-monorepo-example"
+    "url": "https://github.com/sbjang123456/yarn-monorepo-study"
   },
   "author": {
     "name": "sbjang",

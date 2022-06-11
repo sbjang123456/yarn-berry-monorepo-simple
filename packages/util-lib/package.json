@@ -2,10 +2,10 @@
   "name": "@sb/util-lib",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/sbjang123456/yarn-berry-monorepo-template",
+  "homepage": "https://github.com/sbjang123456/yarn-monorepo-study",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sbjang123456/yarn-berry-monorepo-template",
+    "url": "https://github.com/sbjang123456/yarn-monorepo-study",
     "directory": "packages/util-lib"
   },
   "author": {
