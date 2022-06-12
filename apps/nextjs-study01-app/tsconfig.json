@@ -1,20 +1,39 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": "./src",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "jsxImportSource": "@emotion/react",
+    "incremental": true,
+    "paths": {
+      "@/lib/*": ["./lib/*"],
+      "@/components/*": ["./components/*"],
+      "@/features/*": ["./features/*"],
+      "@/pages/*": ["./pages/*"],
+      "@/public/*": ["../public/*"],
+      "@sb/common-i18n": ["../../../packages/common-i18n/src/index"],
+      "@sb/common-i18n/locales/*": [
+        "../../../packages/common-i18n/src/locales/*"
+      ],
+      "@sb/component-lib/*": ["../../../packages/component-lib/src/*"],
+      "@sb/component-lib": ["../../../packages/component-lib/src/index"],
+      "@sb/util-lib/*": ["../../../packages/util-lib/src/*"],
+      "@sb/util-lib": ["../../../packages/util-lib/src/index"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["**/node_modules", "**/.*/"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mts",
+    "**/*.js",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.jsx",
+    "**/*.json"
+  ]
 }
