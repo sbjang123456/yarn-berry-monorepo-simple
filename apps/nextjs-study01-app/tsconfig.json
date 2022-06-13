@@ -20,8 +20,8 @@
       ],
       "@sb/component-lib/*": ["../../../packages/component-lib/src/*"],
       "@sb/component-lib": ["../../../packages/component-lib/src/index"],
-      "@sb/util-lib/*": ["../../../packages/util-lib/src/*"],
-      "@sb/util-lib": ["../../../packages/util-lib/src/index"]
+      "@sb/core-lib/*": ["../../../packages/core-lib/src/*"],
+      "@sb/core-lib": ["../../../packages/core-lib/src/index"]
     }
   },
   "exclude": ["**/node_modules", "**/.*/"],

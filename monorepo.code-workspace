@@ -9,12 +9,12 @@
       "path": "packages/component-lib"
     },
     {
-      "name": "eslint-config-bases",
-      "path": "packages/eslint-config-bases"
+      "name": "core-lib",
+      "path": "packages/core-lib"
     },
     {
-      "name": "util-lib",
-      "path": "packages/util-lib"
+      "name": "eslint-config-bases",
+      "path": "packages/eslint-config-bases"
     },
     {
       "name": "root",
@@ -43,8 +43,8 @@
     "eslint.workingDirectories": [
       "./packages/common-i18n",
       "./packages/component-lib",
+      "./packages/core-lib",
       "./packages/eslint-config-bases",
-      "./packages/util-lib"
     ]
   }
 }

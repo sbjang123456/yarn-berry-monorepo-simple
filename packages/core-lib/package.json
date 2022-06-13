@@ -1,12 +1,12 @@
 {
-  "name": "@sb/util-lib",
+  "name": "@sb/core-lib",
   "version": "1.0.0",
   "private": true,
   "homepage": "https://github.com/sbjang123456/yarn-monorepo-study",
   "repository": {
     "type": "git",
     "url": "https://github.com/sbjang123456/yarn-monorepo-study",
-    "directory": "packages/util-lib"
+    "directory": "packages/core-lib"
   },
   "author": {
     "name": "sbjang",
