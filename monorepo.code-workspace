@@ -1,6 +1,10 @@
 {
   "folders": [
     {
+      "name": "nextjs-coinone-app",
+      "path": "apps/nextjs-coinone-app"
+    },
+    {
       "name": "common-i18n",
       "path": "packages/common-i18n"
     },
@@ -41,6 +45,7 @@
     "eslint.alwaysShowStatus": true,
     // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
     "eslint.workingDirectories": [
+      "./apps/nextjs-coinone-app",
       "./packages/common-i18n",
       "./packages/component-lib",
       "./packages/core-lib",

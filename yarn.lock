@@ -3190,6 +3190,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"coinone@workspace:apps/nextjs-coinone-app":
+  version: 0.0.0-use.local
+  resolution: "coinone@workspace:apps/nextjs-coinone-app"
+  dependencies:
+    "@types/node": 17.0.42
+    "@types/react": 18.0.12
+    "@types/react-dom": 18.0.5
+    eslint: 8.17.0
+    eslint-config-next: 12.1.6
+    next: 12.1.6
+    react: 18.1.0
+    react-dom: 18.1.0
+    typescript: 4.7.3
+  languageName: unknown
+  linkType: soft
+
 "collect-v8-coverage@npm:^1.0.0":
   version: 1.0.1
   resolution: "collect-v8-coverage@npm:1.0.1"
