@@ -101,7 +101,7 @@ module.exports = {
       },
       {
         selector: 'variable',
-        format: ['camelCase'],
+        format: ['camelCase', 'UPPER_CASE'],
         leadingUnderscore: 'allow',
       },
       {
@@ -142,7 +142,7 @@ module.exports = {
       },
       {
         selector: ['typeProperty'],
-        format: ['camelCase'],
+        format: ['camelCase', 'UPPER_CASE'],
         // For graphql __typename
         leadingUnderscore: 'allowDouble',
       },
