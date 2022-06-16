@@ -38,7 +38,6 @@ module.exports = {
       },
     },
     {
-      files: ['src/backend/**/*graphql*schema*.ts'],
       rules: {
         '@typescript-eslint/naming-convention': [
           'error',
