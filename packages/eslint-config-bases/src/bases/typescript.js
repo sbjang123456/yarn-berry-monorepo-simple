@@ -101,7 +101,7 @@ module.exports = {
       },
       {
         selector: 'variable',
-        format: ['camelCase'],
+        format: ['camelCase', 'UPPER_CASE'],
         leadingUnderscore: 'allow',
       },
       {
@@ -124,6 +124,16 @@ module.exports = {
       },
       {
         selector: 'objectLiteralProperty',
+        format: null,
+        leadingUnderscore: 'allowSingleOrDouble',
+        trailingUnderscore: 'allowSingleOrDouble',
+        custom: {
+          regex: '^([a-zA-Z][a-z0-9]*)(-[a-zA-Z0-9]+)*$',
+          match: true,
+        },
+      },
+      {
+        selector: 'objectLiteralProperty',
         format: [
           'camelCase',
           // Some external libraries use snake_case for params
@@ -142,7 +152,7 @@ module.exports = {
       },
       {
         selector: ['typeProperty'],
-        format: ['camelCase'],
+        format: ['camelCase', 'UPPER_CASE', 'snake_case'],
         // For graphql __typename
         leadingUnderscore: 'allowDouble',
       },
