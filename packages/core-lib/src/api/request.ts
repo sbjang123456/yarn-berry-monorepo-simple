@@ -16,7 +16,7 @@ export const HOST_COINPAPRIKA_API = 'https://api.coinpaprika.com/v1';
 
 const request = axios.create({
   timeout: 10000,
-  // headers: { 'Content-Type': 'application/json' },
+  headers: { 'content-type': 'application/json' },
 });
 
 request.interceptors.response.use(
