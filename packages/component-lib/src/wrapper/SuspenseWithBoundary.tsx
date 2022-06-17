@@ -1,13 +1,21 @@
-import type { PropsWithChildren } from 'react';
-import { Suspense, SuspenseProps } from 'react';
-import { ErrorBoundary, ErrorBoundaryProps } from 'react-error-boundary';
+import { Spin } from 'antd';
+import type { PropsWithChildren, ReactElement } from 'react';
+import { Suspense } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 
-// export interface SuspenseWithBoundaryProps {}
+export interface SuspenseWithBoundaryProps {
+  loadingComponent?: ReactElement;
+  errorComponent?: ReactElement;
+}
 
-export const SuspenseWithBoundary = ({ children }: PropsWithChildren) => {
+export const SuspenseWithBoundary = ({
+  children,
+  loadingComponent = <Spin />,
+  errorComponent = <div>error!</div>,
+}: PropsWithChildren<SuspenseWithBoundaryProps>) => {
   return (
-    <Suspense fallback={<div>loading</div>}>
-      <ErrorBoundary fallback={<div>error!!</div>}>{children}</ErrorBoundary>
+    <Suspense fallback={loadingComponent}>
+      <ErrorBoundary fallback={errorComponent}>{children}</ErrorBoundary>
     </Suspense>
   );
 };
