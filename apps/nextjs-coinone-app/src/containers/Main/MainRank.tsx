@@ -5,15 +5,17 @@ import Image from 'next/image';
 /* lib */
 import { Table, Tooltip } from 'antd';
 import type { ColumnsType } from 'antd/lib/table';
-import useGetCoinList from 'hooks/useGetCoinList';
+
+/* hooks,components */
+import { useCallGetCoin } from '@sb/core-lib/api/hooks/useCallCoin';
 
 /* style */
 import { cssMainRankTitle, cssMainRankTable } from './Main.style';
 
 /*type */
-import { TableDataType } from 'interface/dataTypes';
+import { ICoin } from '@sb/core-lib/src/interface/Coin';
 
-const columns: ColumnsType<TableDataType> = [
+const columns: ColumnsType<ICoin> = [
   {
     title: () => (
       <Tooltip title="등락률: 9시(KST) 기준 등락 표시 거래대금: 24시간 기준 표시">
@@ -33,11 +35,11 @@ const columns: ColumnsType<TableDataType> = [
   },
   {
     title: '현재가',
-    dataIndex: ['quotes', 'USD', 'ath_price'],
+    dataIndex: ['quotes', 'KRW', 'ath_price'],
     className: 'table-gray',
     sorter: {
       compare: (a, b) =>
-        Number(a.quotes.USD.ath_price) - Number(b.quotes.USD.ath_price),
+        Number(a.quotes.KRW.ath_price) - Number(b.quotes.KRW.ath_price),
       multiple: 3,
     },
     render: (value) => {
@@ -76,7 +78,8 @@ const columns: ColumnsType<TableDataType> = [
 ];
 
 export const MainRank: FC = () => {
-  const { data, isLoading } = useGetCoinList(10);
+  const { data, isLoading } = useCallGetCoin();
+  const dataList = data?.slice(0, 10);
 
   return (
     <article>
@@ -89,7 +92,7 @@ export const MainRank: FC = () => {
           rowKey="name"
           css={cssMainRankTable}
           columns={columns}
-          dataSource={data}
+          dataSource={dataList}
           pagination={false}
         />
       )}
