@@ -78,8 +78,7 @@ const columns: ColumnsType<ICoin> = [
 ];
 
 export const MainRank: FC = () => {
-  const { data, isLoading } = useCallGetCoin();
-  const dataList = data?.slice(0, 10);
+  const { data, isLoading } = useCallGetCoin(10);
 
   return (
     <article>
@@ -92,7 +91,7 @@ export const MainRank: FC = () => {
           rowKey="name"
           css={cssMainRankTable}
           columns={columns}
-          dataSource={dataList}
+          dataSource={data}
           pagination={false}
         />
       )}
