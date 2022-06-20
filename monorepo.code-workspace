@@ -5,6 +5,10 @@
       "path": "apps/nextjs-coinone-app"
     },
     {
+      "name": "nextjs-study01-app",
+      "path": "apps/nextjs-study01-app"
+    },
+    {
       "name": "common-i18n",
       "path": "packages/common-i18n"
     },
@@ -40,16 +44,17 @@
     // Disable vscode formatting for js,jsx,ts,tsx files
     // to allow dbaeumer.vscode-eslint to format them
     "[javascript]": {
-      "editor.formatOnSave": false,
+      "editor.formatOnSave": false
     },
     "eslint.alwaysShowStatus": true,
     // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
     "eslint.workingDirectories": [
       "./apps/nextjs-coinone-app",
+      "./apps/nextjs-study01-app",
       "./packages/common-i18n",
       "./packages/component-lib",
       "./packages/core-lib",
-      "./packages/eslint-config-bases",
+      "./packages/eslint-config-bases"
     ]
   }
 }
