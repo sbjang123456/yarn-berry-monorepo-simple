@@ -2,6 +2,7 @@ import { SuspenseWithBoundary } from '@sb/component-lib/wrapper';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import HelloContainer from '../container/HelloContainer';
 import styles from '../styles/Home.module.css';
 
@@ -57,6 +58,18 @@ const Home: NextPage = () => {
             <HelloContainer />
           </SuspenseWithBoundary>
         </div>
+        <Link href="/example">
+          <a>Example</a>
+        </Link>
+        <Link href="/recoil">
+          <a>recoil Example</a>
+        </Link>
+        <Link href="/ssr/example01">
+          <a>ssr example01</a>
+        </Link>
+        <Link href="/ssr/example02">
+          <a>ssr example02</a>
+        </Link>
       </main>
 
       <footer className={styles.footer}>
