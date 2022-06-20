@@ -11,8 +11,10 @@
     "paths": {
       "@/lib/*": ["./lib/*"],
       "@/components/*": ["./components/*"],
+      "@/container/*": ["./container/*"],
       "@/features/*": ["./features/*"],
       "@/pages/*": ["./pages/*"],
+      "@/recoil/*": ["./recoil/*"],
       "@/public/*": ["../public/*"],
       "@sb/common-i18n": ["../../../packages/common-i18n/src/index"],
       "@sb/common-i18n/locales/*": [
