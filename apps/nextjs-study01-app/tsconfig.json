@@ -14,7 +14,7 @@
       "@/container/*": ["./container/*"],
       "@/features/*": ["./features/*"],
       "@/pages/*": ["./pages/*"],
-      "@/recoil/*": ["./recoil/*"],
+      "@/states": ["./states"],
       "@/public/*": ["../public/*"],
       "@sb/common-i18n": ["../../../packages/common-i18n/src/index"],
       "@sb/common-i18n/locales/*": [

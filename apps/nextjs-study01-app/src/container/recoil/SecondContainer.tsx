@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { exampleCount } from '@/recoil/example';
 import { useRecoilState } from 'recoil';
+import { exampleCount } from '@/states';
 
 const SecondContainer = () => {
   const [count, setCount] = useRecoilState(exampleCount);

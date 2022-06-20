@@ -1,6 +1,6 @@
 import React from 'react';
-import { exampleCount } from '@/recoil/example';
 import { useRecoilValue } from 'recoil';
+import { exampleCount } from '@/states';
 
 const ThirdContainer = () => {
   const count = useRecoilValue(exampleCount);
