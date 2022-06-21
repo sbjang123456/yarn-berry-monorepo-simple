@@ -12,7 +12,7 @@ import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
 
 /* style */
-import '../styles/globals.css';
+import { GlobalStyle } from '../globalStyle';
 import 'antd/dist/antd.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
+        <GlobalStyle />
         <DefaultSeo {...SEO} />
         <Header />
         <Component {...pageProps} />
