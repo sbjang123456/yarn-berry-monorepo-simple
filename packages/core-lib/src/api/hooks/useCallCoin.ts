@@ -1,6 +1,6 @@
-import { useQuery } from 'react-query';
 import { callGetCoinList } from '../requests/callCoin';
+import { useGetApi } from './useApi';
 
 export const useCallGetCoin = (limit: number) => {
-  return useQuery(['callGetCoinList'], () => callGetCoinList(limit));
+  return useGetApi(['callGetCoinList'], () => callGetCoinList(limit));
 };
