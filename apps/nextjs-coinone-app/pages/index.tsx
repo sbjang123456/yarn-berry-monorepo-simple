@@ -1,13 +1,14 @@
-import { Header } from '@/components/Header';
-import { Main } from 'containers/Main';
+/* next */
 import type { NextPage } from 'next';
+
+/* component */
+import { Main } from 'containers/Main';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Header />
+    <>
       <Main />
-    </div>
+    </>
   );
 };
 
