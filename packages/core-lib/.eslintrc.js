@@ -27,7 +27,7 @@ module.exports = {
   overrides: [
     // optional overrides per project file match
     {
-      files: ['**/test-utills.{ts,tsx}'],
+      files: ['**/test-utils.{ts,tsx}'],
       rules: {
         'react/display-name': 'off',
       },

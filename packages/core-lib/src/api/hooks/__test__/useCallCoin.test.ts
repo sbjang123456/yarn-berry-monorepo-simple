@@ -2,7 +2,7 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { useCallGetCoin } from '../useCallCoin';
-import { createWrapper } from './test-utills';
+import { createWrapper } from './test-utils';
 
 const server = setupServer(
   rest.get('*/tickers', (req, res, ctx) => {
