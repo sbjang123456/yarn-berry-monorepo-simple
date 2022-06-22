@@ -6,15 +6,15 @@ import { MainCarouselText } from './MainCarouselText';
 import { MainRank } from './MainRank';
 
 /* style */
-import { cssMainContent } from './Main.style';
+import { ContentWrap } from '../../style/common';
 
 export const Main: FC = () => {
   return (
     <>
       <MainCarouselText />
-      <section css={cssMainContent}>
+      <ContentWrap>
         <MainRank />
-      </section>
+      </ContentWrap>
     </>
   );
 };
