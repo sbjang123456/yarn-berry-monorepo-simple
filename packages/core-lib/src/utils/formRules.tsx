@@ -1,10 +1,10 @@
 interface Irule {
-  field: string;
-  fullField: string;
-  message: string;
-  required: true;
-  type: string;
-  validator: () => void;
+  field?: string;
+  fullField?: string;
+  message?: string;
+  required?: true;
+  type?: string;
+  validator?: () => void;
 }
 
 export default {
