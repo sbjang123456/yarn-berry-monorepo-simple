@@ -14,7 +14,11 @@ import {
 /* style */
 import { MaxButton } from '../../style/common';
 
-const Register01: FC = () => {
+interface Iprops {
+  setTitle: (value: string) => void;
+}
+
+const Register01: FC<Iprops> = (props: Iprops) => {
   const form = Form.useFormInstance();
   const userType = Form.useWatch('user-type', form);
 
@@ -28,6 +32,10 @@ const Register01: FC = () => {
     );
     form.setFieldsValue({ ...clearTypes });
   }, [userType]);
+
+  useEffect(() => {
+    props.setTitle('본인인증을 시작합니다.<br />예상 소요시간은 10분입니다.');
+  }, []);
 
   return (
     <>

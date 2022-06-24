@@ -1,5 +1,5 @@
 /* next */
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 /* components */
 import Register01 from './Register01';
@@ -12,6 +12,7 @@ import { cssRegisterTitle, RegisterContentWrap } from './Register.style';
 
 const Index: FC = () => {
   const [form] = Form.useForm();
+  const [title, setTitle] = useState('');
 
   const onFinish = (values: any) => {
     console.log('Success:', values);
@@ -24,8 +25,7 @@ const Index: FC = () => {
   return (
     <RegisterContentWrap>
       <div css={cssRegisterTitle}>
-        본인인증을 시작합니다. <br />
-        예상 소요시간은 10분입니다.
+        <div dangerouslySetInnerHTML={{ __html: title }}></div>
       </div>
       <Form
         form={form}
@@ -35,7 +35,7 @@ const Index: FC = () => {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
-        <Register01 />
+        <Register01 setTitle={(value: string) => setTitle(value)} />
       </Form>
     </RegisterContentWrap>
   );
