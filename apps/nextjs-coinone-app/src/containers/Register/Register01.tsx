@@ -14,11 +14,10 @@ import {
 /* style */
 import { MaxButton } from '../../style/common';
 
-interface Iprops {
-  setTitle: (value: string) => void;
-}
+/* types */
+import { IProps } from '../../Interface/Register';
 
-const Register01: FC<Iprops> = (props: Iprops) => {
+const Register01: FC<IProps> = (props: IProps) => {
   const form = Form.useFormInstance();
   const userType = Form.useWatch('user-type', form);
 
