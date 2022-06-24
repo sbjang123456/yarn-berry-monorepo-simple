@@ -41,3 +41,26 @@ export const PERSONAL_REGISTER_TYPE = [
     option2: '국내거주',
   },
 ];
+
+export const REGISTER_AGREE_LIST = [
+  {
+    name: 'agree1',
+    label: '코인원 이용약관',
+    link: '#',
+  },
+  {
+    name: 'agree2',
+    label: '개인정보 수집 및 이용',
+    link: '#',
+  },
+  {
+    name: 'agree3',
+    label: '고유식별정보 수집 및 이용',
+    link: '#',
+  },
+  {
+    name: 'agree4',
+    label: '고유식별정보 수집 및 이용 (선택)',
+    link: '#',
+  },
+];
