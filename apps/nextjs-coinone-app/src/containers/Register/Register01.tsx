@@ -1,5 +1,5 @@
 /* next */
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 /* lib */
 import { Button, Form, Input, Radio } from 'antd';
@@ -15,12 +15,13 @@ import {
 import { MaxButton } from '../../style/common';
 
 /* types */
-import { IProps } from '../../Interface/Register';
+import { IProps, IRegisterList } from '../../Interface/Register';
 import { Rule } from 'antd/lib/form';
 
 const Register01: FC<IProps> = (props) => {
   const form = Form.useFormInstance();
   const userType = Form.useWatch('user-type', form);
+  const [userTypeList, setUserTypeList] = useState<IRegisterList[]>([]);
 
   useEffect(() => {
     // clear inputs
@@ -30,6 +31,8 @@ const Register01: FC<IProps> = (props) => {
       (acc, current) => ({ ...acc, [current.name]: '' }),
       {}
     );
+    // set user type list
+    setUserTypeList(typeArr);
     form.setFieldsValue({ ...clearTypes });
   }, [userType]);
 
@@ -59,36 +62,20 @@ const Register01: FC<IProps> = (props) => {
           <Radio.Button value="개인">개인</Radio.Button>
         </Radio.Group>
       </Form.Item>
-      {userType === '법인' &&
-        CORPORATE_REGISTER_TYPE.map((type) => (
-          <Form.Item
-            key={type.label}
-            label={type.label}
-            name={type.name}
-            colon={false}
-            rules={FORM_RULES.defaultrule}
-          >
-            <Radio.Group>
-              <Radio.Button value={type.option1}>{type.option1}</Radio.Button>
-              <Radio.Button value={type.option2}>{type.option2}</Radio.Button>
-            </Radio.Group>
-          </Form.Item>
-        ))}
-      {userType === '개인' &&
-        PERSONAL_REGISTER_TYPE.map((type) => (
-          <Form.Item
-            key={type.label}
-            label={type.label}
-            name={type.name}
-            colon={false}
-            rules={FORM_RULES.defaultrule}
-          >
-            <Radio.Group>
-              <Radio.Button value={type.option1}>{type.option1}</Radio.Button>
-              <Radio.Button value={type.option2}>{type.option2}</Radio.Button>
-            </Radio.Group>
-          </Form.Item>
-        ))}
+      {userTypeList.map((type) => (
+        <Form.Item
+          key={type.label}
+          label={type.label}
+          name={type.name}
+          colon={false}
+          rules={FORM_RULES.defaultrule}
+        >
+          <Radio.Group>
+            <Radio.Button value={type.option1}>{type.option1}</Radio.Button>
+            <Radio.Button value={type.option2}>{type.option2}</Radio.Button>
+          </Radio.Group>
+        </Form.Item>
+      ))}
 
       <Form.Item>
         <MaxButton>
