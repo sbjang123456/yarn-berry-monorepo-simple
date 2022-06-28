@@ -32,5 +32,21 @@ module.exports = {
         'react/display-name': 'off',
       },
     },
+    {
+      files: ['**/api/request.ts'],
+      rules: {
+        '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            selector: ['objectLiteralProperty'],
+            format: ['camelCase'],
+            filter: {
+              regex: '^([a-zA-Z][a-z0-9]*)(-[a-zA-Z0-9]+)*$',
+              match: false,
+            },
+          },
+        ],
+      },
+    },
   ],
 };
