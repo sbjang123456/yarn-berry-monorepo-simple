@@ -40,6 +40,15 @@ export const RegisterContentWrap = styled.section`
       border-radius: 7px;
     }
   }
+
+  @keyframes showanimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const RegisterCheckBoxWrap = styled.div`

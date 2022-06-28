@@ -1,24 +1,25 @@
+/* utils */
+import FORM_RULES from '@sb/core-lib/utils/form-rules';
+
+/* lib */
+import { Button, Form, Input, Radio } from 'antd';
+import type { Rule } from 'antd/lib/form';
+
 /* next */
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
-/* lib */
-import { Button, Form, Input, Radio } from 'antd';
-
 /* constans */
-import FORM_RULES from '@sb/core-lib/utils/form-rules';
 import {
   CORPORATE_REGISTER_TYPE,
   PERSONAL_REGISTER_TYPE,
 } from '../../../constants/codes';
 
-/* style */
-import { MaxButton } from '../../style/common';
-
 /* types */
 import type { IProps, IRegisterList } from '../../Interface/Register';
-import type { Rule } from 'antd/lib/form';
 
+/* style */
+import { MaxButton } from '../../style/common';
 const Register01: FC<IProps> = (props) => {
   const form = Form.useFormInstance();
   const userType = Form.useWatch('user-type', form);
@@ -63,20 +64,22 @@ const Register01: FC<IProps> = (props) => {
           <Radio.Button value="개인">개인</Radio.Button>
         </Radio.Group>
       </Form.Item>
-      {userTypeList.map((type) => (
-        <Form.Item
-          key={type.label}
-          label={type.label}
-          name={type.name}
-          colon={false}
-          rules={FORM_RULES.defaultrule}
-        >
-          <Radio.Group>
-            <Radio.Button value={type.option1}>{type.option1}</Radio.Button>
-            <Radio.Button value={type.option2}>{type.option2}</Radio.Button>
-          </Radio.Group>
-        </Form.Item>
-      ))}
+      {userType &&
+        userTypeList.map((type) => (
+          <Form.Item
+            key={type.label}
+            label={type.label}
+            name={type.name}
+            colon={false}
+            rules={FORM_RULES.defaultrule}
+            style={{ animation: 'showanimation 450ms ease-in-out' }}
+          >
+            <Radio.Group>
+              <Radio.Button value={type.option1}>{type.option1}</Radio.Button>
+              <Radio.Button value={type.option2}>{type.option2}</Radio.Button>
+            </Radio.Group>
+          </Form.Item>
+        ))}
 
       <Form.Item>
         <MaxButton>
