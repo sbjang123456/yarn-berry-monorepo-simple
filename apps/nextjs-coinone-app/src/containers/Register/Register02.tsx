@@ -1,20 +1,18 @@
-/* next */
+/* next, lib */
+import { CheckOutlined } from '@ant-design/icons';
+import FORM_RULES from '@sb/core-lib/utils/form-rules';
+import { Checkbox, Form, Button } from 'antd';
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
 
-/* lib */
-import { Checkbox, Form, Button } from 'antd';
-import { CheckOutlined } from '@ant-design/icons';
-
 /* constans */
-import FORM_RULES from '@sb/core-lib/utils/form-rules';
 import { REGISTER_AGREE_LIST } from '../../../constants/codes';
 
 /* style */
+import type { IProps } from '../../Interface/Register';
 import { MaxButton, FlexBetweenBox, LineBox } from '../../style/common';
 
 /* types */
-import type { IProps } from '../../Interface/Register';
 
 const Register02: FC<IProps> = (props: IProps) => {
   const [form] = Form.useForm();

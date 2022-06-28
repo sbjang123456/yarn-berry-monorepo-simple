@@ -1,12 +1,12 @@
 /* next */
 import type { FC } from 'react';
 
+/* style */
+import { ContentWrap } from '../../style/common';
+
 /* components */
 import { MainCarouselText } from './MainCarouselText';
 import { MainRank } from './MainRank';
-
-/* style */
-import { ContentWrap } from '../../style/common';
 
 export const Main: FC = () => {
   return (
