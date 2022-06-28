@@ -16,8 +16,9 @@ import { MaxButton } from '../../style/common';
 
 /* types */
 import { IProps } from '../../Interface/Register';
+import { Rule } from 'antd/lib/form';
 
-const Register01: FC<IProps> = (props: IProps) => {
+const Register01: FC<IProps> = (props) => {
   const form = Form.useFormInstance();
   const userType = Form.useWatch('user-type', form);
 
@@ -42,7 +43,7 @@ const Register01: FC<IProps> = (props: IProps) => {
         label="유저 이름"
         colon={false}
         name="username"
-        rules={FORM_RULES.userNameRule as any}
+        rules={FORM_RULES.userNameRule as Rule[]}
       >
         <Input />
       </Form.Item>
