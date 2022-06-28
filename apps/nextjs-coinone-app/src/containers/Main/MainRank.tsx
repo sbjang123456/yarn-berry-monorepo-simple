@@ -12,8 +12,8 @@ import { useCallGetCoin } from '@sb/core-lib/api/hooks/useCallCoin';
 /* style */
 import { cssMainRankTitle, cssMainRankTable } from './Main.style';
 
-/*type */
-import { ICoin } from '@sb/core-lib/interface/Coin';
+/* type */
+import type { ICoin } from '@sb/core-lib/interface/Coin';
 
 const columns: ColumnsType<ICoin> = [
   {

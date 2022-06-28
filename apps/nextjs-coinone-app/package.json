@@ -6,9 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "test": "yarn test-unit",
+    "test-unit": "echo 'Not yet Test'",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx,.graphql --cache --cache-location ../../.cache/eslint/nextjs-app.eslintcache",
+    "fix-all-files": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx,.graphql --fix"
   },
   "dependencies": {
+    "@ant-design/icons": "4.7.0",
     "@emotion/react": "11.9.3",
     "@types/axios": "0.14.0",
     "antd": "4.21.2",

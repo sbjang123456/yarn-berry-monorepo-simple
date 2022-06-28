@@ -1,10 +1,5 @@
 import { css } from '@emotion/react';
 
-export const cssMainContent = css`
-  margin: 50px auto;
-  max-width: 1024px;
-`;
-
 export const cssMainCarouselText = css`
   display: flex;
   align-items: center;
