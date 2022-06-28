@@ -5,7 +5,7 @@ import { FC, useEffect } from 'react';
 import { Button, Form, Input, Radio } from 'antd';
 
 /* constans */
-import FORM_RULES from '@sb/core-lib/utils/formRules';
+import FORM_RULES from '@sb/core-lib/utils/form-rules';
 import {
   CORPORATE_REGISTER_TYPE,
   PERSONAL_REGISTER_TYPE,
@@ -43,7 +43,7 @@ const Register01: FC<IProps> = (props) => {
         label="유저 이름"
         colon={false}
         name="username"
-        rules={FORM_RULES.userNameRule as Rule[]}
+        rules={FORM_RULES.usenamerule as Rule[]}
       >
         <Input />
       </Form.Item>
@@ -52,7 +52,7 @@ const Register01: FC<IProps> = (props) => {
         name="user-type"
         colon={false}
         label="가입유형"
-        rules={FORM_RULES.defaultRequireRule}
+        rules={FORM_RULES.defaultrule}
       >
         <Radio.Group>
           <Radio.Button value="법인">법인</Radio.Button>
@@ -66,7 +66,7 @@ const Register01: FC<IProps> = (props) => {
             label={type.label}
             name={type.name}
             colon={false}
-            rules={FORM_RULES.defaultRequireRule}
+            rules={FORM_RULES.defaultrule}
           >
             <Radio.Group>
               <Radio.Button value={type.option1}>{type.option1}</Radio.Button>
@@ -81,7 +81,7 @@ const Register01: FC<IProps> = (props) => {
             label={type.label}
             name={type.name}
             colon={false}
-            rules={FORM_RULES.defaultRequireRule}
+            rules={FORM_RULES.defaultrule}
           >
             <Radio.Group>
               <Radio.Button value={type.option1}>{type.option1}</Radio.Button>
