@@ -1,5 +1,6 @@
 /* next */
-import { FC, useState, useEffect } from 'react';
+import type { FC } from 'react';
+import { useState, useEffect } from 'react';
 
 /* lib */
 import { Checkbox, Form, Button } from 'antd';
@@ -13,7 +14,7 @@ import { REGISTER_AGREE_LIST } from '../../../constants/codes';
 import { MaxButton, FlexBetweenBox, LineBox } from '../../style/common';
 
 /* types */
-import { IProps } from '../../Interface/Register';
+import type { IProps } from '../../Interface/Register';
 
 const Register02: FC<IProps> = (props: IProps) => {
   const [form] = Form.useForm();

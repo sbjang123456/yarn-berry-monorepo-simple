@@ -1,11 +1,8 @@
 /* next */
 import type { FC } from 'react';
 
-/* style */
-import { smallGrayButton } from './Button.style';
-
 interface Iprops {
-  text: String;
+  text: string;
 }
 
 export const Button: FC<Iprops> = ({ text }) => {

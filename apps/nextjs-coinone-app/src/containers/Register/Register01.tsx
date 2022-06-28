@@ -1,5 +1,6 @@
 /* next */
-import { FC, useEffect, useState } from 'react';
+import type { FC } from 'react';
+import { useEffect, useState } from 'react';
 
 /* lib */
 import { Button, Form, Input, Radio } from 'antd';
@@ -15,8 +16,8 @@ import {
 import { MaxButton } from '../../style/common';
 
 /* types */
-import { IProps, IRegisterList } from '../../Interface/Register';
-import { Rule } from 'antd/lib/form';
+import type { IProps, IRegisterList } from '../../Interface/Register';
+import type { Rule } from 'antd/lib/form';
 
 const Register01: FC<IProps> = (props) => {
   const form = Form.useFormInstance();
