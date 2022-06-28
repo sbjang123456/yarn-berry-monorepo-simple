@@ -124,16 +124,6 @@ module.exports = {
       },
       {
         selector: 'objectLiteralProperty',
-        format: null,
-        leadingUnderscore: 'allowSingleOrDouble',
-        trailingUnderscore: 'allowSingleOrDouble',
-        custom: {
-          regex: '^([a-zA-Z][a-z0-9]*)(-[a-zA-Z0-9]+)*$',
-          match: true,
-        },
-      },
-      {
-        selector: 'objectLiteralProperty',
         format: [
           'camelCase',
           // Some external libraries use snake_case for params
