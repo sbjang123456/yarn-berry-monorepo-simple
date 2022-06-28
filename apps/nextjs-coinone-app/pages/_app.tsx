@@ -1,18 +1,18 @@
+import { DefaultSeo } from 'next-seo';
+
 /* next, react */
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
 
-/* components */
-import { Header } from '@/components/Header';
-
-/* lib */
+/* lib ,components */
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { DefaultSeo } from 'next-seo';
+import { RecoilRoot } from 'recoil';
+import { Header } from '@/components/Header';
+import { GlobalStyle } from '../globalStyle';
 import SEO from '../next-seo.config';
 
 /* style */
-import { GlobalStyle } from '../globalStyle';
 import 'antd/dist/antd.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -23,7 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <GlobalStyle />
         <DefaultSeo {...SEO} />
         <Header />
-        <Component {...pageProps} />
+        <RecoilRoot>
+          <Component {...pageProps} />
+        </RecoilRoot>
       </Hydrate>
       <ReactQueryDevtools />
     </QueryClientProvider>
