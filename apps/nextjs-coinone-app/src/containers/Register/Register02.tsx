@@ -48,7 +48,7 @@ const Register02: FC<IProps> = (props: IProps) => {
           key={agree.name}
           name={agree.name}
           valuePropName="checked"
-          rules={agree.name !== 'agree4' ? FORM_RULES.defaultrule : undefined}
+          rules={agree.name !== 'agree4' ? FORM_RULES.defaultRule : undefined}
         >
           <FlexBetweenBox>
             <Checkbox>{agree.label}</Checkbox>

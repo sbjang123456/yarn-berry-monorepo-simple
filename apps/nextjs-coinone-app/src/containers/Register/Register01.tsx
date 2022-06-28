@@ -48,7 +48,7 @@ const Register01: FC<IProps> = (props) => {
         label="유저 이름"
         colon={false}
         name="username"
-        rules={FORM_RULES.usenamerule as Rule[]}
+        rules={FORM_RULES.userNameRule as Rule[]}
       >
         <Input />
       </Form.Item>
@@ -57,7 +57,7 @@ const Register01: FC<IProps> = (props) => {
         name="user-type"
         colon={false}
         label="가입유형"
-        rules={FORM_RULES.defaultrule}
+        rules={FORM_RULES.defaultRule}
       >
         <Radio.Group>
           <Radio.Button value="법인">법인</Radio.Button>
@@ -71,7 +71,7 @@ const Register01: FC<IProps> = (props) => {
             label={type.label}
             name={type.name}
             colon={false}
-            rules={FORM_RULES.defaultrule}
+            rules={FORM_RULES.defaultRule}
             style={{ animation: 'showanimation 450ms ease-in-out' }}
           >
             <Radio.Group>
