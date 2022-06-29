@@ -1,5 +1,6 @@
 /* next, lib */
 import { CheckOutlined } from '@ant-design/icons';
+import { css } from '@emotion/react';
 import FORM_RULES from '@sb/core-lib/utils/form-rules';
 import { Checkbox, Form, Button } from 'antd';
 import type { FC } from 'react';
@@ -14,14 +15,17 @@ import { MaxButton, FlexBetweenBox, LineBox } from '../../style/common';
 
 /* types */
 
-const Register02: FC<IProps> = (props: IProps) => {
-  const [form] = Form.useForm();
+const Register02: FC<IProps> = (props) => {
+  const form = Form.useFormInstance();
   const [allAgree, setAllAgree] = useState(false);
 
   const changeAllAgree = () => {
     setAllAgree(!allAgree);
     const clearTypes = REGISTER_AGREE_LIST.reduce(
-      (acc, current) => ({ ...acc, [current.name]: !allAgree }),
+      (acc, current) => ({
+        ...acc,
+        [current.name]: allAgree ? undefined : true,
+      }),
       {}
     );
     form.setFieldsValue({ ...clearTypes });
@@ -44,16 +48,22 @@ const Register02: FC<IProps> = (props: IProps) => {
       </LineBox>
       {REGISTER_AGREE_LIST.map((agree) => (
         <Form.Item
-          shouldUpdate
           key={agree.name}
           name={agree.name}
           valuePropName="checked"
           rules={agree.name !== 'agree4' ? FORM_RULES.defaultRule : undefined}
+          css={css`
+            label {
+              width: 100%;
+            }
+          `}
         >
-          <FlexBetweenBox>
-            <Checkbox>{agree.label}</Checkbox>
-            <u>보기</u>
-          </FlexBetweenBox>
+          <Checkbox>
+            <FlexBetweenBox>
+              {agree.label}
+              <u>보기</u>
+            </FlexBetweenBox>
+          </Checkbox>
         </Form.Item>
       ))}
       <Form.Item>
