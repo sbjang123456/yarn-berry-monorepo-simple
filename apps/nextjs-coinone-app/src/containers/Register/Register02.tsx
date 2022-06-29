@@ -9,11 +9,10 @@ import { useState, useEffect } from 'react';
 /* constans */
 import { REGISTER_AGREE_LIST } from '../../../constants/codes';
 
-/* style */
+/* types, style */
 import type { IProps } from '../../Interface/Register';
-import { MaxButton, FlexBetweenBox, LineBox } from '../../style/common';
-
-/* types */
+import { MaxButton, LineBox } from '../../style/common';
+import { cssCheckboxWrap } from './Register.style';
 
 const Register02: FC<IProps> = (props) => {
   const form = Form.useFormInstance();
@@ -52,17 +51,11 @@ const Register02: FC<IProps> = (props) => {
           name={agree.name}
           valuePropName="checked"
           rules={agree.name !== 'agree4' ? FORM_RULES.defaultRule : undefined}
-          css={css`
-            label {
-              width: 100%;
-            }
-          `}
+          css={cssCheckboxWrap}
         >
           <Checkbox>
-            <FlexBetweenBox>
-              {agree.label}
-              <u>보기</u>
-            </FlexBetweenBox>
+            {agree.label}
+            <u>보기</u>
           </Checkbox>
         </Form.Item>
       ))}

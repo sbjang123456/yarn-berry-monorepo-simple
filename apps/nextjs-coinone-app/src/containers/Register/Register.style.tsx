@@ -62,3 +62,14 @@ export const cssRegisterTitle = css`
   font-size: 24px;
   font-weight: 700;
 `;
+
+export const cssCheckboxWrap = css`
+  .ant-checkbox-wrapper {
+    display: flex;
+    .ant-checkbox + span {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+`;
