@@ -36,10 +36,7 @@ const Register02: FC<IProps> = (props) => {
 
   return (
     <>
-      <LineBox
-        onClick={changeAllAgree}
-        css={allAgree && { borderColor: '#1772f8' }}
-      >
+      <LineBox onClick={changeAllAgree} allAgree>
         <CheckOutlined
           style={allAgree ? { color: '#1772f8' } : { color: '#000' }}
         />

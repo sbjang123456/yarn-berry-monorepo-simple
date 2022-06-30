@@ -7,8 +7,9 @@ export const ContentWrap = styled.section`
 `;
 
 /* BOX CONTENT */
-export const LineBox = styled.div`
-  border: 1px solid #e4e5e8;
+export const LineBox = styled.div<{ allAgree: boolean }>`
+  border-color: ${(props) => (props.allAgree ? '#1772f8' : '#e4e5e8')};
+  border: 1px solid;
   border-radius: 8px;
   transition: border-color 0.25s;
   display: flex;
