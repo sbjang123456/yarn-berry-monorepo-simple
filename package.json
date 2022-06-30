@@ -47,6 +47,7 @@
     "@commitlint/config-conventional": "17.0.2",
     "@sb/eslint-config-bases": "workspace:^",
     "@types/prettier": "2.6.3",
+    "@types/shell-quote": "1.7.1",
     "eslint": "8.17.0",
     "husky": "8.0.1",
     "lint-staged": "13.0.2",
