@@ -1,7 +1,3 @@
-export interface IProps {
-  setTitle: (value: string) => void;
-}
-
 export interface IRegisterList {
   name: string;
   label: string;

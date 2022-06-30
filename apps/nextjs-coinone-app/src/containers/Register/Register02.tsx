@@ -4,17 +4,16 @@ import { css } from '@emotion/react';
 import FORM_RULES from '@sb/core-lib/utils/form-rules';
 import { Checkbox, Form, Button } from 'antd';
 import type { FC } from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 /* constans */
 import { REGISTER_AGREE_LIST } from '../../../constants/codes';
 
 /* types, style */
-import type { IProps } from '../../Interface/Register';
 import { MaxButton, LineBox } from '../../style/common';
 import { cssCheckboxWrap } from './Register.style';
 
-const Register02: FC<IProps> = (props) => {
+const Register02: FC = () => {
   const form = Form.useFormInstance();
   const [allAgree, setAllAgree] = useState(false);
 
@@ -29,10 +28,6 @@ const Register02: FC<IProps> = (props) => {
     );
     form.setFieldsValue({ ...clearTypes });
   };
-
-  useEffect(() => {
-    props.setTitle('약관에 동의해 주세요.');
-  }, []);
 
   return (
     <>

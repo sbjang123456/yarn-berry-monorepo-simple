@@ -16,11 +16,11 @@ import {
 } from '../../../constants/codes';
 
 /* types */
-import type { IProps, IRegisterList } from '../../Interface/Register';
+import type { IRegisterList } from '../../Interface/Register';
 
 /* style */
 import { MaxButton } from '../../style/common';
-const Register01: FC<IProps> = (props) => {
+const Register01: FC = () => {
   const form = Form.useFormInstance();
   const userType = Form.useWatch('user-type', form);
   const [userTypeList, setUserTypeList] = useState<IRegisterList[]>([]);
@@ -37,10 +37,6 @@ const Register01: FC<IProps> = (props) => {
     setUserTypeList(typeArr);
     form.setFieldsValue({ ...clearTypes });
   }, [userType]);
-
-  useEffect(() => {
-    props.setTitle('본인인증을 시작합니다.<br />예상 소요시간은 10분입니다.');
-  }, []);
 
   return (
     <>

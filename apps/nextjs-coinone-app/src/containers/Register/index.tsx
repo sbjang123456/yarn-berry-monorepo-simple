@@ -5,9 +5,10 @@ import type { ValidateErrorEntity } from 'rc-field-form/lib/interface';
 
 /* next */
 import type { FC } from 'react';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useRecoilState } from 'recoil';
 import { registerStep, registerDataObj } from 'states';
+import { REGISTER_TITLE } from '../../../constants/codes';
 
 /* components , style */
 import { cssRegisterTitle, RegisterContentWrap } from './Register.style';
@@ -16,7 +17,6 @@ import Register02 from './Register02';
 
 const Index: FC = () => {
   const [form] = Form.useForm();
-  const [title, setTitle] = useState('');
   const [step, setStep] = useRecoilState(registerStep);
   const [registerData, setRegisterData] = useRecoilState(registerDataObj);
 
@@ -33,16 +33,20 @@ const Index: FC = () => {
   const registerComponents = useMemo(() => {
     switch (step) {
       case 1:
-        return <Register01 setTitle={(value: string) => setTitle(value)} />;
+        return <Register01 />;
       case 2:
-        return <Register02 setTitle={(value: string) => setTitle(value)} />;
+        return <Register02 />;
     }
   }, [step]);
 
   return (
     <RegisterContentWrap>
       <div css={cssRegisterTitle}>
-        <div dangerouslySetInnerHTML={{ __html: title }}></div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: REGISTER_TITLE[`step${step}`],
+          }}
+        ></div>
       </div>
       <Form
         form={form}
