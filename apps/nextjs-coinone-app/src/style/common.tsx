@@ -7,8 +7,9 @@ export const ContentWrap = styled.section`
 `;
 
 /* BOX CONTENT */
-export const LineBox = styled.div`
-  border: 1px solid #e4e5e8;
+export const LineBox = styled.div<{ allagree: boolean | undefined }>`
+  color: ${(props) => (props.allagree ? '#1772f8' : '#000000')};
+  border: 1px solid;
   border-radius: 8px;
   transition: border-color 0.25s;
   display: flex;
@@ -19,6 +20,10 @@ export const LineBox = styled.div`
   margin-bottom: 32px;
   gap: 10px;
   cursor: pointer;
+  &,
+  & .anticon-check {
+    color: ${(props) => (props.allagree ? '#1772f8' : '#000000')};
+  }
 `;
 
 /* BUTTON */
@@ -38,4 +43,7 @@ export const FlexBetweenBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  label {
+    width: 100%;
+  }
 `;

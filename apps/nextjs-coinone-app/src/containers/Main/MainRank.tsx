@@ -1,19 +1,17 @@
-/* next */
-import type { FC } from 'react';
-import Image from 'next/image';
-
-/* lib */
+/* lib, type */
+import { useCallGetCoin } from '@sb/core-lib/api/hooks/useCallCoin';
+import type { ICoin } from '@sb/core-lib/interface/Coin';
 import { Table, Tooltip } from 'antd';
 import type { ColumnsType } from 'antd/lib/table';
 
+/* next */
+import Image from 'next/image';
+import type { FC } from 'react';
+
 /* hooks,components */
-import { useCallGetCoin } from '@sb/core-lib/api/hooks/useCallCoin';
 
 /* style */
 import { cssMainRankTitle, cssMainRankTable } from './Main.style';
-
-/* type */
-import type { ICoin } from '@sb/core-lib/interface/Coin';
 
 const columns: ColumnsType<ICoin> = [
   {

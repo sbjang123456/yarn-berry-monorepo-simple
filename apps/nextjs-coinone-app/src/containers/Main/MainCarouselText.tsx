@@ -2,9 +2,6 @@
 import type { FC } from 'react';
 import { useState } from 'react';
 
-/* components */
-import { MainCarousel } from './MainCarousel';
-
 /* codes */
 import { MAIN_CAROUSEL } from '../../../constants/codes';
 
@@ -15,6 +12,9 @@ import {
   cssMainCarouselDown,
   cssMainCarouselList,
 } from './Main.style';
+
+/* components */
+import { MainCarousel } from './MainCarousel';
 
 export const MainCarouselText: FC = () => {
   const [open, setOpen] = useState(false);

@@ -1,61 +1,51 @@
-/* next */
-import type { FC } from 'react';
-import { useState, useEffect } from 'react';
-
-/* lib */
-import { Checkbox, Form, Button } from 'antd';
+/* next, lib */
 import { CheckOutlined } from '@ant-design/icons';
+import FORM_RULES from '@sb/core-lib/utils/form-rules';
+import { Checkbox, Form, Button } from 'antd';
+import type { FC } from 'react';
+import { useState } from 'react';
 
 /* constans */
-import FORM_RULES from '@sb/core-lib/utils/form-rules';
 import { REGISTER_AGREE_LIST } from '../../../constants/codes';
 
-/* style */
-import { MaxButton, FlexBetweenBox, LineBox } from '../../style/common';
+/* types, style */
+import { MaxButton, LineBox } from '../../style/common';
+import { cssCheckboxWrap } from './Register.style';
 
-/* types */
-import type { IProps } from '../../Interface/Register';
-
-const Register02: FC<IProps> = (props: IProps) => {
-  const [form] = Form.useForm();
+const Register02: FC = () => {
+  const form = Form.useFormInstance();
   const [allAgree, setAllAgree] = useState(false);
 
   const changeAllAgree = () => {
     setAllAgree(!allAgree);
     const clearTypes = REGISTER_AGREE_LIST.reduce(
-      (acc, current) => ({ ...acc, [current.name]: !allAgree }),
+      (acc, current) => ({
+        ...acc,
+        [current.name]: allAgree ? undefined : true,
+      }),
       {}
     );
     form.setFieldsValue({ ...clearTypes });
   };
 
-  useEffect(() => {
-    props.setTitle('약관에 동의해 주세요.');
-  }, []);
-
   return (
     <>
-      <LineBox
-        onClick={changeAllAgree}
-        css={allAgree && { borderColor: '#1772f8' }}
-      >
-        <CheckOutlined
-          style={allAgree ? { color: '#1772f8' } : { color: '#000' }}
-        />
+      <LineBox onClick={changeAllAgree} allagree={allAgree}>
+        <CheckOutlined />
         <b>모든 항목에 동의하기</b>
       </LineBox>
       {REGISTER_AGREE_LIST.map((agree) => (
         <Form.Item
-          shouldUpdate
           key={agree.name}
           name={agree.name}
           valuePropName="checked"
-          rules={agree.name !== 'agree4' ? FORM_RULES.defaultrule : undefined}
+          rules={agree.name !== 'agree4' ? FORM_RULES.defaultRule : undefined}
+          css={cssCheckboxWrap}
         >
-          <FlexBetweenBox>
-            <Checkbox>{agree.label}</Checkbox>
+          <Checkbox>
+            {agree.label}
             <u>보기</u>
-          </FlexBetweenBox>
+          </Checkbox>
         </Form.Item>
       ))}
       <Form.Item>

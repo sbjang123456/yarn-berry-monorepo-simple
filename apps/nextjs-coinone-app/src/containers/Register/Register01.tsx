@@ -16,11 +16,11 @@ import {
 } from '../../../constants/codes';
 
 /* types */
-import type { IProps, IRegisterList } from '../../Interface/Register';
+import type { IRegisterList } from '../../Interface/Register';
 
 /* style */
 import { MaxButton } from '../../style/common';
-const Register01: FC<IProps> = (props) => {
+const Register01: FC = () => {
   const form = Form.useFormInstance();
   const userType = Form.useWatch('user-type', form);
   const [userTypeList, setUserTypeList] = useState<IRegisterList[]>([]);
@@ -38,17 +38,13 @@ const Register01: FC<IProps> = (props) => {
     form.setFieldsValue({ ...clearTypes });
   }, [userType]);
 
-  useEffect(() => {
-    props.setTitle('본인인증을 시작합니다.<br />예상 소요시간은 10분입니다.');
-  }, []);
-
   return (
     <>
       <Form.Item
         label="유저 이름"
         colon={false}
         name="username"
-        rules={FORM_RULES.usenamerule as Rule[]}
+        rules={FORM_RULES.userNameRule as Rule[]}
       >
         <Input />
       </Form.Item>
@@ -57,7 +53,7 @@ const Register01: FC<IProps> = (props) => {
         name="user-type"
         colon={false}
         label="가입유형"
-        rules={FORM_RULES.defaultrule}
+        rules={FORM_RULES.defaultRule}
       >
         <Radio.Group>
           <Radio.Button value="법인">법인</Radio.Button>
@@ -71,7 +67,7 @@ const Register01: FC<IProps> = (props) => {
             label={type.label}
             name={type.name}
             colon={false}
-            rules={FORM_RULES.defaultrule}
+            rules={FORM_RULES.defaultRule}
             style={{ animation: 'showanimation 450ms ease-in-out' }}
           >
             <Radio.Group>

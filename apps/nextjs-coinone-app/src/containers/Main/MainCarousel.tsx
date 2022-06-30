@@ -1,12 +1,12 @@
+/* lib */
+import { Carousel } from 'antd';
+
 /* next */
-import type { FC } from 'react';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 /* codes */
 import { MAIN_CAROUSEL } from '../../../constants/codes';
-
-/* lib */
-import { Carousel } from 'antd';
 
 /* style */
 import { cssMainCarouselWrap, cssMainCarouselContent } from './Main.style';

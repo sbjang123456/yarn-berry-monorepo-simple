@@ -8,13 +8,13 @@ interface Irule {
 }
 
 export default {
-  defaultrule: [
+  defaultRule: [
     {
       required: true,
       message: '필수값입니다.',
     },
   ],
-  usenamerule: [
+  userNameRule: [
     {
       required: true,
       message: '유저 이름은 필수값입니다. 2자 이상 입력해주세요',

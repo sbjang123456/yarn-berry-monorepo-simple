@@ -64,3 +64,8 @@ export const REGISTER_AGREE_LIST = [
     link: '#',
   },
 ];
+
+export const REGISTER_TITLE: { [key: string]: string } = {
+  step1: '본인인증을 시작합니다.<br />예상 소요시간은 10분입니다.',
+  step2: '약관에 동의해 주세요.',
+};
