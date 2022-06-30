@@ -1,4 +1,3 @@
-import { CheckOutlined } from '@ant-design/icons';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -73,8 +72,4 @@ export const cssCheckboxWrap = css`
       justify-content: space-between;
     }
   }
-`;
-
-export const CheckIcon = styled(CheckOutlined)<{ allagree: boolean }>`
-  color: ${(props) => (props.allagree ? '#1772f8' : '#000000')};
 `;

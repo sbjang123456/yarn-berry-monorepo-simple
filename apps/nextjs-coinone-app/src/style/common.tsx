@@ -7,7 +7,7 @@ export const ContentWrap = styled.section`
 `;
 
 /* BOX CONTENT */
-export const LineBox = styled.div<{ allagree: boolean }>`
+export const LineBox = styled.div<{ allagree: boolean | undefined }>`
   color: ${(props) => (props.allagree ? '#1772f8' : '#000000')};
   border: 1px solid;
   border-radius: 8px;
@@ -20,6 +20,10 @@ export const LineBox = styled.div<{ allagree: boolean }>`
   margin-bottom: 32px;
   gap: 10px;
   cursor: pointer;
+  &,
+  & .anticon-check {
+    color: ${(props) => (props.allagree ? '#1772f8' : '#000000')};
+  }
 `;
 
 /* BUTTON */
