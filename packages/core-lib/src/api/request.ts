@@ -27,6 +27,7 @@ interface CustomAxiosInstance extends AxiosInstance {
 }
 
 export const HOST_COINPAPRIKA_API = 'https://api.coinpaprika.com/v1';
+export const HOST_API_TEST = '';
 
 const request: CustomAxiosInstance = axios.create({
   timeout: 10000,
