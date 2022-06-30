@@ -24,6 +24,7 @@
     "g:typecheck": "yarn workspaces foreach -ptv run typecheck",
     "g:lint-staged-files": "lint-staged --allow-empty",
     "g:fix-all-files": "yarn workspaces foreach -ptv run fix-all-files",
+    "g:changeset": "changeset",
     "clean:global-cache": "rimraf --no-glob ./.cache",
     "apps:clean": "yarn workspaces foreach -ptv --include '*-app' run clean",
     "packages:lint": "yarn workspaces foreach -ptv --include '@sb/*' run lint",
@@ -40,6 +41,8 @@
   ],
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
+    "@changesets/changelog-github": "0.4.5",
+    "@changesets/cli": "2.23.0",
     "@commitlint/cli": "17.0.2",
     "@commitlint/config-conventional": "17.0.2",
     "@sb/eslint-config-bases": "workspace:^",
