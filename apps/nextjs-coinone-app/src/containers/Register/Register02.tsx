@@ -29,7 +29,7 @@ const Register02: FC = () => {
 
   return (
     <>
-      <LineBox onClick={changeAllAgree} allAgree>
+      <LineBox onClick={changeAllAgree} allagree={allAgree}>
         <CheckIcon allagree={allAgree} />
         <b>모든 항목에 동의하기</b>
       </LineBox>
