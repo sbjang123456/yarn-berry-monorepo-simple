@@ -1,6 +1,4 @@
 /* next, lib */
-import { CheckOutlined } from '@ant-design/icons';
-import { css } from '@emotion/react';
 import FORM_RULES from '@sb/core-lib/utils/form-rules';
 import { Checkbox, Form, Button } from 'antd';
 import type { FC } from 'react';
@@ -11,7 +9,7 @@ import { REGISTER_AGREE_LIST } from '../../../constants/codes';
 
 /* types, style */
 import { MaxButton, LineBox } from '../../style/common';
-import { cssCheckboxWrap } from './Register.style';
+import { CheckIcon, cssCheckboxWrap } from './Register.style';
 
 const Register02: FC = () => {
   const form = Form.useFormInstance();
@@ -32,9 +30,7 @@ const Register02: FC = () => {
   return (
     <>
       <LineBox onClick={changeAllAgree} allAgree>
-        <CheckOutlined
-          style={allAgree ? { color: '#1772f8' } : { color: '#000' }}
-        />
+        <CheckIcon allagree={allAgree} />
         <b>모든 항목에 동의하기</b>
       </LineBox>
       {REGISTER_AGREE_LIST.map((agree) => (
