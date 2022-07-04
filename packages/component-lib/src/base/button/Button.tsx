@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import React from 'react';
 import { cssButtonStyle } from './Button.styles';
 
-type ButtonProps = {
+export type ButtonProps = {
   /**
    * Is this the principal call to action on the page?
    */
