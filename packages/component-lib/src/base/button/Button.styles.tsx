@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 export const cssButtonStyle = css`
   font-weight: 700;
   border: 0;
-  border-radius: 3em;
+  border-radius: 3.5em;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
