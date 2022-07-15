@@ -45,7 +45,7 @@ export const Button: FC<ButtonProps> = (props) => {
       css={cssButtonStyle}
       type="button"
       className={[size, mode].join(' ')}
-      style={{ backgroundColor }}
+      style={{ backgroundColor, width: 100 }}
       {...restProps}
     >
       {label}
