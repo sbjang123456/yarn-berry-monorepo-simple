@@ -5,7 +5,7 @@ import ExamplePage from '@/container/example/ExamplePage';
 const Example: NextPage = () => {
   return (
     <>
-      <NextSeo title="react-query-example" description="with suspense" />
+      <NextSeo title="react-query-example" description="what is code see" />
       <ExamplePage />
     </>
   );
